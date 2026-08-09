@@ -19,8 +19,8 @@ return new class extends Migration
             $table->tinyInteger('gender');
             $table->string('email', 255);
             $table->string('tel', 11);
-            $table->string('adress', 255);
-            $table->string('building', 255);
+            $table->string('address', 255);
+            $table->string('building', 255)->nullable();
             $table->string('detail', 120);
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
