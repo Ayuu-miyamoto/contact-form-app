@@ -15,10 +15,10 @@ class Contact extends Model
         'gender',
         'email',
         'tel',
-        'adress',
+        'address',
         'building',
         'detail',  
-        'categories_id',
+        'category_id',
     ];
 
     public function category()
