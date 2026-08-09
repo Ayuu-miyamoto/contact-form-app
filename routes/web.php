@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
+// 仮ルート
+Route::get('/admin', function () {
+    return view('admin.index');
+})->name('admin.index')->middleware(['auth', 'verified']); 
