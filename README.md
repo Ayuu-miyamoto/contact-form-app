@@ -78,11 +78,7 @@ http://localhost
 
 ## 動作環境
 
-下記がインストールされたパソコン
-
-Docker
-Laravel
-PHPMyAdmin
+Docker Desktopがインストールされたパソコン
 
 ## 環境構築手順
 
@@ -91,41 +87,50 @@ PHPMyAdmin
     ```bash
     git clone https://github.com/Ayuu-miyamoto/contact-form-app.git
     ```
+2. **プロジェクトディレクトリに移動**
+    ```bash
+    cd contact-form-app
+    ```
 
-2. **.envファイルの準備**
+3. **.envファイルの準備**
     ```bash
     cp .env.example .env
     ```
 
-3. **Composer依存パッケージのインストール**
+4. **Composer依存パッケージのインストール**
     ```bash
     docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
+    -e COMPOSER_CACHE_DIR=/tmp/composer_cache \
     laravelsail/php82-composer:latest \
-    composer install
+    composer install --ignore-platform-reqs
     ```
-4. **Laravel Sailの起動**
+
+5. **Laravel Sailの起動**
     ```bash
     ./vendor/bin/sail up -d
     ```
 
-5. **アプリケーションキーの生成**
+6. **アプリケーションキーの生成**
     ```bash
-    sail artisan key:generate
+    ./vendor/bin/sail artisan key:generate
     ```
-6. **データベースのマイグレーションと初期データ投入**
+
+7. **データベースのマイグレーションと初期データ投入**
     ```bash
     ./vendor/bin/sail artisan migrate --seed
     ```
-7. **フロントエンドのビルド**
+
+8. **フロントエンドのビルド**
     ```bash
     ./vendor/bin/sail npm install
 
     ./vendor/bin/sail npm run dev
     ```
-8. **アプリケーションへのアクセス**
+    
+9. **アプリケーションへのアクセス**
 
     お問い合せ入力フォーム
     
