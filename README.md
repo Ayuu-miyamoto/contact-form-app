@@ -138,7 +138,7 @@ Docker Desktopがインストールされたパソコン
 
     管理画面ログインページ
 
-    http://localhost/loginß
+    http://localhost/login
     
 ## テスト実行
 
@@ -157,7 +157,7 @@ Docker Desktopがインストールされたパソコン
 - タグ編集ページ
 - お問い合わせ詳細ページ
 - ログアウト
-- 公開API
+- 公開API(未実装)
 
 
 ## APIエンドポイント一覧
