@@ -16,7 +16,7 @@ class ContactRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * お問い合せ入力フォームのバリデーションを取得する
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
@@ -106,27 +106,17 @@ class ContactRequest extends FormRequest
             public function messages(): array
             {  
                 return [
-                    'first_name.required' => '名前は必須です。',
-                    'first_name.max' => '名前は255文字以内で入力してください。',
-                    'last_name.required' => '苗字は必須です。',
-                    'last_name.max' => '苗字は255文字以内で入力してください。',
-                    'gender.required' => '性別は必須です。',
-                    'gender.in' => '性別は1（男性）、2（女性）、3（その他）のいずれかで選択してください。',
-                    'email.required' => 'メールアドレスは必須です。',
-                    'email.email' => 'メールアドレスの形式が正しくありません。',
-                    'email.max' => 'メールアドレスは255文字以内で入力してください。',
-                    'tel.required' => '電話番号は必須です。',
-                    'tel.regex' => '電話番号は10桁または11桁の数字で入力してください。',
-                    'tel.max' => '電話番号は11文字以内で入力してください。',
-                    'address.required' => '住所は必須です。',
-                    'address.max' => '住所は255文字以内で入力してください。',
+                    'first_name.required' => '名を入力してください',
+                    'last_name.required' => '姓を入力してください',
+                    'gender.required' => '性別を選択してください',
+                    'email.required' => 'メールアドレスを入力してください',
+                    'email.email' => 'メールアドレスはメール形式で入力してください',
+                    'tel.required' => '電話番号を入力してください',
+                    'address.required' => '住所を入力してください',
                     'building.max' => '建物名は255文字以内で入力してください。',
-                    'detail.required' => '詳細は必須です。',
-                    'detail.max' => '詳細は120文字以内で入力してください。',
-                    'category_id.required' => 'カテゴリは必須です。',
-                    'category_id.exists' => '選択されたカテゴリは存在しません。',
-                    'tags_ids.array' => 'タグは配列で指定してください。',
-                    'tags_ids.exists' => '選択されたタグは存在しません。',
+                    'detail.required' => 'お問い合わせ内容を入力してください',
+                    'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
+                    'category_id.required' => 'お問い合わせの種類を選択してください',
                 ];
     }
 }
