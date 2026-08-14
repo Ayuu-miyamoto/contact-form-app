@@ -8,15 +8,15 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * sail artisan db:seed でまとめて投入できるようにする
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class,
+            TagSeeder::class,
+            ContactSeeder::class,
+        ]);
     }
 }
