@@ -133,7 +133,7 @@ PHPMyAdmin
 
     管理画面ログインページ
 
-    http://localhost/loginß
+    http://localhost/login
     
 ## テスト実行
 
